@@ -9,7 +9,7 @@ export default {
     title: 'Pool² Documentation',
   }),
   getRoutes: async () => {
-    const { posts, home, about } = await jdown('content')
+    const { guides, concepts, home, about, rest } = await jdown('content')
     return [
       {
         path: '/',
@@ -26,16 +26,37 @@ export default {
         }),
       },
       {
-        path: '/blog',
-        component: 'src/containers/Blog',
+        path: '/rest',
+        component: 'src/containers/Rest',
         getData: () => ({
-          posts,
+          rest,
         }),
-        children: posts.map(post => ({
-          path: `/post/${post.slug}`,
-          component: 'src/containers/Post',
+      },
+      {
+        path: '/concepts',
+        component: 'src/containers/Concepts',
+        getData: () => ({
+          concepts,
+        }),
+        children: concepts.map(concept => ({
+          path: `/${concept.slug}`,
+          component: 'src/containers/Concept',
           getData: () => ({
-            post,
+            concept,
+          }),
+        })),
+      },
+      {
+        path: '/guides',
+        component: 'src/containers/Guides',
+        getData: () => ({
+            guides,
+        }),
+        children: guides.map(guide => ({
+          path: `/${guide.slug}`,
+          component: 'src/containers/Guide',
+          getData: () => ({
+            guide,
           }),
         })),
       },
