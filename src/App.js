@@ -2,6 +2,7 @@ import React from 'react'
 import { Router, Link } from 'react-static'
 import { hot } from 'react-hot-loader'
 import logo from 'resources/drop_small.png'
+import SideMenu from 'elements/sidemenu'
 //
 import Routes from 'react-static-routes'
 
@@ -23,6 +24,9 @@ const App = () => (
         <Link to="/rest" className="text">REST Interfaces</Link>
         <Link to="/about" className="text">About</Link>
       </nav>
+
+      <SideMenu />
+
       <div className="content">
         <Routes />
       </div>

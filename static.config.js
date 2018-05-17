@@ -4,9 +4,22 @@ import chokidar from 'chokidar'
 
 chokidar.watch('content').on('all', () => reloadRoutes())
 
+const getRoutes  = async () => {
+    const {guides, concepts, home, about, rest} = await jdown('content')
+    return {
+        "guides" : guides,
+        "concepts" : concepts,
+        "home" : home,
+        "about" : about,
+        "rest" : rest,
+    }
+}
+
+process.env.mkRoutes = getRoutes()
+
 export default {
-  getSiteData: () => ({
-    title: 'Pool² Documentation',
+  getSiteData: async () => ({
+    title: 'Pool² Documentation'
   }),
   getRoutes: async () => {
     const { guides, concepts, home, about, rest } = await jdown('content')
