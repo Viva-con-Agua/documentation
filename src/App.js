@@ -22,6 +22,7 @@ const App = () => (
         <Link to="/guides" className="text">Guides</Link>
         <Link to="/rest" className="text">REST Interfaces</Link>
         <Link to="/about" className="text">About</Link>
+        <span>This documentation is still under construction...</span>
       </nav>
       <div className="content">
         <Routes />

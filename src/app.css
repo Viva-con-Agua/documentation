@@ -30,7 +30,7 @@ nav {
   flex-direction: row;
 }
 
-nav a {
+nav a, nav > span {
   /*color: white;*/
   /*padding: 1rem;*/
   display: inline-block;
@@ -50,6 +50,11 @@ nav a {
   -webkit-box-shadow: none;
   margin-right: 0.5em;
   line-height: 50px; /* same size as logo */
+}
+
+nav > span {
+  font-size: 0.8em;
+  color: rebeccapurple;
 }
 
 nav a.text:hover {
