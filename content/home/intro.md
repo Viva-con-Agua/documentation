@@ -65,8 +65,12 @@ to implement _joint optimization_ and _organizational choice_.
 In the end, a decentralized, loosely coupled social system of software developer evolves, focusing small parts of the 
 technical system.  
 
+## How to read this documentation?
+There is a short [introduction written as a guide](/guides/edit-docu/).
+
 **Author:** [Johann Sell](https://cses.informatik.hu-berlin.de/members/johann.sell/) -- 
-**Created:** 2018-05-18
+**Created:** 2018-05-18 --
+**Updated:** 2018-05-29
 
 [wp]: https://wordpress.org/ "Version 4.9.2; https://wordpress.org/, visited 2018-02-01"
 [weick1976educational]: http://www.jstor.org/stable/2391875?origin=crossref "K. E. Weick, “Educational Organizations as Loosely Coupled Systems,” Adm. Sci. Q., vol. 21, no. 1, pp. 1–19, Mar. 1976."
