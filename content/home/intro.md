@@ -5,13 +5,13 @@ volunteers during their daily work. This tool is explicitly developed to support
 VcA is a decentralized social system of volunteers raising awareness and collecting donations for 
 WASH (``Water, Sanitation and Hygiene'') projects. Such projects address the establishment of 
 access to clean drinking water and basic sanitation for all humans worldwide. 
-The volunteers pursue their aims through creative and joyful activities, as defined by the self-description of \vca . 
-As the volunteers get together and organize themselves in separated regional groups, those \socialElement{local crews} 
+The volunteers pursue their aims through creative and joyful activities, as defined by the self-description of VcA. 
+As the volunteers get together and organize themselves in separated regional groups, those _local crews_ 
 are loosely coupled [(Weick, 1976)][weick1976educational]. 
 Furthermore, there is a small administration, called _Brunnenbüro_. This team has three purposes: 
-1. Tie together all results from work done by the several _local crews_, 
-2. controlling compliance with legal conditions and 
-3. offering counsel for _local crews_ if needed.
+1. Tie together all results from work done by the several _local crews_ 
+2. Controlling compliance with legal conditions
+3. Offering counsel for _local crews_ if needed
 
 The principle of _open participation_ is of paramount importance for VcA. It describes the possibility to 
 "decide to get oneself involved in some activity this day and to veer away from it the next day" 
@@ -64,6 +64,18 @@ to implement _joint optimization_ and _organizational choice_.
 
 In the end, a decentralized, loosely coupled social system of software developer evolves, focusing small parts of the 
 technical system.  
+
+## IT Projektkultur
+We establish VcA culture for an IT project. Thus, we hope to adopt the success of the volunteering network. Such an approach
+implies intrinsic motivation, fun and joy for all participants during the implementation of the project. Furthermore, we
+develop the Pool² as a composition of small, decentral organized and independent projects. 
+
+Focusing such a project culture, we have to tackle several challenges: We have to find participants for the continuous 
+further development of VcAs technical parts. Those participants have to consider the socio-technical symbiosis of VcA.
+Such an approach potentially produces project structures similar to open source communities. But also student degree theses
+or all-profit based engagement of companies will result in important contributions.
+It requires independence of all participants by technology and implies only few necessary training. Also project management
+should be unrelated.
 
 ## How to read this documentation?
 There is a short [introduction written as a guide](/guides/edit-docu/).
