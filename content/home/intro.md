@@ -77,6 +77,40 @@ or all-profit based engagement of companies will result in important contributio
 It requires independence of all participants by technology and implies only few necessary training. Also project management
 should be unrelated.
 
+## Architecture
+These challenges have concrete implications for the systems architecture. We will consider functional requirements and 
+separation of project teams by technology and management. Thus, next to monolithic architectures, we consider sharp 
+component based systems and the architectures implications for the projects culture.
+
+We implement a microservice-architecture, because it best matches the requirements 
+[(Sell and Pinkwart, 2018)][sell2018microservice]. An application that is running in its own process and is in _high cohesion_
+to a _Bounded Context_, is called a microservice. Such a service uses a lightweight communication with other services, 
+like _RESTful webservices_. A set of connected microservices is called a microservice architecture 
+([Newman, 2015][newman2015building]; [Dragoni, 2017][dragoni2017microservices]).
+
+Developer have a free choice of technology, since microservices are independent standalone applications (with small 
+restrictions, see [concepts](/concepts)). The initial training is limited to the given interfaces, that have to be well
+documented. Developers have few coordinative relations, thus a project culture similar to the social systems culture is 
+possible to implement.
+
+![Pool² architecture](/Pool2_architektur-small.png "Figure 1: Functional requirements resulting from Pool as microservices of
+Pool². Drops: User management; Stream: Finances; Bloob: Communication; Waves: Events;")
+
+The functional requirements for the new Pool² are defined by the existing functions of the [Pool](https://pool.vivaconagua.org/).
+Figure 1 shows the projection of Pool functions onto microservices of the Pool². Drops implements a user management, 
+Stream allows to handle finances, Bloob supports communication and Waves coordinates volunteers during events. While these
+services implement obvious functional requirements, the section [concepts](/concepts) contains additional non-functional
+requirements. Furthermore, you can find descriptions of addtional microservices implementing the non-functional requirements.  
+
+The Pool² project is developed in collaboration with the research group  
+[Computer Science Education | Computer Science and Society of the Humboldt-Universität zu Berlin](https://cses.informatik.hu-berlin.de/). 
+It aims the preparation of the architecture and concepts as well as the initial implementation of the functional requirements.
+Several questions are addressed, like: How to prevent users from entering their credentials for each microservice? 
+How to implement RESTful communication between services? How to secure it?
+How to ensure complience of _corporate design (CD)_ and basic usability guidelines, without code duplication and hampered
+maintainance? 
+All these questions will be discussed and solved in [concepts](/concepts).
+
 ## How to read this documentation?
 There is a short [introduction written as a guide](/guides/edit-docu/).
 
@@ -89,3 +123,6 @@ There is a short [introduction written as a guide](/guides/edit-docu/).
 [sell2016rambla]: https://cses.informatik.hu-berlin.de/pubs/2016/criwg/Rambla_Supporting_Collaborative_Group_Creativity_For_the_Purpose_of_Concept_Generation.pdf "J. Sell and N. Pinkwart, “Rambla: Supporting collaborative group creativity for the purpose of concept generation,” in Proceedings of the 22th International Conference on Collaboration and Technology (CRIWG), 2016, vol. 9848 LNCS, pp. 81–97"
 [kunau2006facilitating]: http://hdl.handle.net/2003/22226 "G. Kunau, “Facilitating computer supported cooperative work with socio-technical self-descriptions,” Technische Universität Dortmund, 2006."
 [herrmann2004stwt]: http://portal.acm.org/citation.cfm?doid=1011870.1011886 "T. Herrmann, G. Kunau, K.-U. Loser, and N. Menold, “Socio-technical walkthrough: designing technology along work processes,” in Proceedings of the eighth conference on Participatory design Artful integration: Interweaving Media, Materials and Practices - PDC 04, 2004, vol. 1, pp. 132–141."
+[sell2018microservice]: https://cses.informatik.hu-berlin.de/de/research/details/vcv/ "J. Sell and N. Pinkwart, “Socio-technical Self-Development Using A Microservice Architecture” Unpublished Work"
+[newman2015building]: http://shop.oreilly.com/product/0636920033158.do "S. Newman, Building Microservices, 1st ed. O’Reilly Media, 2015."
+[dragoni2017microservices]: https://arxiv.org/abs/1606.04036 "[1] N. Dragoni et al., “Microservices: yesterday, today, and tomorrow.” Cornell University, 2017."
