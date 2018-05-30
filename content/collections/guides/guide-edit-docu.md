@@ -19,7 +19,7 @@ to present it.
 Please install all requirements considering [react-static quick start](https://github.com/nozzle/react-static#quick-start)
 and follow these steps:
 1. Clone or pull the [documentation](https://github.com/Viva-con-Agua/documentation) repository.
-2. Clone or pull the [https://viva-con-agua.github.io/](https://viva-con-agua.github.io/) repository. 
+2. Clone or pull the [https://viva-con-agua.github.io/](https://github.com/Viva-con-Agua/Viva-con-Agua.github.io) repository. 
 3. Add or edit a markdown file in `content`.
 4. Execute `yarn start` for testing purpose. 
 5. Execute `yarn build` to generate the deployable content. 
