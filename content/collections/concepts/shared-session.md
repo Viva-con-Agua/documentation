@@ -49,9 +49,9 @@ redirect
 Some microservices will implement a Web-App architecture. Such applications are based on HTML, CSS and Javascript. Mostly,
 there is also some backend implementing a RESTful API to save and synchronize data entered by users.
 
-Our concept of a trusted OAuth2 handshake runs into trouble, if the microservice credentials are saved on client devices,
-since we are not able to prevent misuse of these credentials. Thus, the backend systems have to handle the trusted OAuth2
-handshake. 
+If the microservice credentials are saved on client devices, our concept of trusted OAuth2 handshake has serious security
+issues since we are not able to prevent misuse of these credentials. Thus, the backend systems have to handle the trusted 
+OAuth2 handshake. 
 
 The question remains of how to implement the user session for the frontend. Short answer: You won't need 
 a frontend session. The user session is needed for three purposes: (1) Control access, (2) use the user information 
@@ -67,8 +67,35 @@ return the `UUID` of the user. Thus, the frontend can use the user in forms and 
 has to display the user (case (3)), you should use widgets for user display prepared by _Drops_ (**Todo:** Reference to 
 widgets concept and list of user widgets).
 
-## Object Event system
-   
+In case your frontend is delivered by a special webserver with no connection to your backend system, you have to implement
+the trusted OAuth2 handshake for the delivering webserver to receive the users `UUID`.
 
-Important notes to consider:
-* OES
+## OAuth Message broker
+If the trusted OAuth2 handshake was successful, a users session can be established. An important requirement is to keep
+the session synchronized. That means, updates of the exchanged user information have to be cascaded, and also the logout
+event.
+
+For this purpose, the Pool² infrastructure hosts a message broker system. _Drops_ publishes these events:
+
+```
+type: LOGOUT
+body: UUID of user
+```
+
+```
+type: user.UPDATE
+body: UUID of user
+```
+
+```
+type: user.CREATE
+body: UUID of user
+```
+
+```
+type: user.DELETE
+body: UUID of user
+```
+
+Your microservice can listen to these events for the purpose of synchronization. For further information about the message
+broker see (**Todo:** Reference to Deployment).
