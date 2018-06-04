@@ -39,8 +39,36 @@ to _Drops_ in order to request an authorization code.
 2. `REDIRECT` from `Microservice` to `Drops`
 3. `Drops` checks if the redirecting `Microservice` is trusted (the URL contains an identifier)
 4. `Drops` generates the `Authorization code`
+5. `Drops` redirects back to the `Microservice` OAuth2 endpoint (given as parameter AND saved in `Drops` database)
+6. `Microservice` is able to initiate a direct REST-based communication to `Drops` and requests the `Access Token` without
+redirect
+7. `Drops` responses with the users data
+8. `Microservice` can initiate its own user session
+
+## Web Apps
+Some microservices will implement a Web-App architecture. Such applications are based on HTML, CSS and Javascript. Mostly,
+there is also some backend implementing a RESTful API to save and synchronize data entered by users.
+
+Our concept of a trusted OAuth2 handshake runs into trouble, if the microservice credentials are saved on client devices,
+since we are not able to prevent misuse of these credentials. Thus, the backend systems have to handle the trusted OAuth2
+handshake. 
+
+The question remains of how to implement the user session for the frontend. Short answer: You won't need 
+a frontend session. The user session is needed for three purposes: (1) Control access, (2) use the user information 
+for further handling, and (3) display the user.
+
+First, you have to keep in mind, that your and your users data is protected by the backend. So, if a user tries to request
+specific data using your RESTful API, your backend can grant or forbid access. Thus, if a user is entering spaces that 
+are not allowed for this user, your backend won't send data, but it can send a status `403 FORBIDDEN` and an optional 
+message. That way your frontend can handle the access control.
+
+Second, to handle the currently logged in user, your backend has to implement a special route that (1) is secured and (2)
+return the `UUID` of the user. Thus, the frontend can use the user in forms and other interaction elements. If your system
+has to display the user (case (3)), you should use widgets for user display prepared by _Drops_ (**Todo:** Reference to 
+widgets concept and list of user widgets).
+
+## Object Event system
+   
 
 Important notes to consider:
-* Programmfluss
-* Web-Apps
 * OES
