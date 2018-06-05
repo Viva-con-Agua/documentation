@@ -28,6 +28,8 @@ nav {
   -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
   display: flex;
   flex-direction: row;
+  position: fixed;
+  width: 100%;
 }
 
 nav a, nav > span {
@@ -66,7 +68,15 @@ nav a.text:hover {
 }
 
 .content {
-  padding: 1rem;
+  padding: 1em;
+  width: 50em;
+  margin: 0 auto;
+  padding-top: 66px;
+}
+
+.content img {
+  margin: 0 auto;
+  display: block;
 }
 
 .brand {
