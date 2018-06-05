@@ -1,6 +1,6 @@
 ---
 title: Shared Session
-slug: shared/session
+slug: concepts/shared/session
 ---
 # Shared Session
 The Pool² is a collaboration support tool. Thus, almost all microserives implementing functional requirements need to 
@@ -22,7 +22,7 @@ Authentication of microservices becomes a critical security challenge for the Po
 microservice if and only if the microservice is hosted by VcA. Undoubtedly, microservices can implement security issues, 
 but since VcA is a socio-technical organization, we need to ensure clean implementation of microservices during a quality 
 assurance process before deployment. For now, all microservices are deployed using a virtual network at the one server, 
-so no external communication (using the internet or at least LAN) is needed (**TODO:** Reference for deployment guide). 
+so no external communication (using the internet or at least LAN) is needed (see [deployment](guide/deployment)). 
 Thus, authentication is implemented using a naive microservice id and secret combination. This combination is send only 
 for requesting the access token.<br />
 **To consider:** Ensure that the authentication data of your microservice is secret for each deployment (test, staging, live)!
@@ -64,8 +64,8 @@ message. That way your frontend can handle the access control.
 
 Second, to handle the currently logged in user, your backend has to implement a special route that (1) is secured and (2)
 return the `UUID` of the user. Thus, the frontend can use the user in forms and other interaction elements. If your system
-has to display the user (case (3)), you should use widgets for user display prepared by _Drops_ (**Todo:** Reference to 
-widgets concept and list of user widgets).
+has to display the user (case (3)), you should use [widgets](concepts/ui/fragment/composition) for user display prepared 
+by _Drops_.
 
 In case your frontend is delivered by a special webserver with no connection to your backend system, you have to implement
 the trusted OAuth2 handshake for the delivering webserver to receive the users `UUID`.
@@ -98,4 +98,4 @@ body: UUID of user
 ```
 
 Your microservice can listen to these events for the purpose of synchronization. For further information about the message
-broker see (**Todo:** Reference to Deployment).
+broker see the [guide for deployment](guide/deployment).
