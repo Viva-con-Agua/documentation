@@ -15,8 +15,8 @@ are deployed inside the VcA-infrastructure. Therefore, it implements an OAuth 2 
 authorization code without asking the users permission. The OAuth client has to be part of the internal microservice 
 network to receive an access token. Thus, the users data is kept save without asking for the users permission on each 
 time the user switches between microservices.<br />
-(Hint: Drops does not implement the original [Authorization Code](https://oauth.net/2/grant-types/authorization-code/)
-workflow. So, there is no way to receive an access token from without the internal microservice network.)
+___Hint:___ Drops does not implement the original [Authorization Code](https://oauth.net/2/grant-types/authorization-code/)
+workflow. So, there is no way to receive an access token from without the internal microservice network.
 
 Authentication of microservices becomes a critical security challenge for the Pool² architecture. _Drops_ can trust a 
 microservice if and only if the microservice is hosted by VcA. Undoubtedly, microservices can implement security issues, 
@@ -99,3 +99,7 @@ body: UUID of user
 
 Your microservice can listen to these events for the purpose of synchronization. For further information about the message
 broker see the [guide for deployment](guide/deployment).
+
+**Author:** [Johann Sell](https://cses.informatik.hu-berlin.de/members/johann.sell/) -- 
+**Created:** 2018-06-05 --
+**Updated:** 2018-06-05

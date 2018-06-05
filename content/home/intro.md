@@ -65,7 +65,7 @@ to implement _joint optimization_ and _organizational choice_.
 In the end, a decentralized, loosely coupled social system of software developer evolves, focusing small parts of the 
 technical system.  
 
-## IT Projektkultur
+## IT project culture
 We establish VcA culture for an IT project. Thus, we hope to adopt the success of the volunteering network. Such an approach
 implies intrinsic motivation, fun and joy for all participants during the implementation of the project. Furthermore, we
 develop the Pool² as a composition of small, decentral organized and independent projects. 
