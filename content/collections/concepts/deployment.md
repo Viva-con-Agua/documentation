@@ -16,7 +16,7 @@ If the vm is setup and docker-ce is installed you need to start the docker servi
 
 # Startup and controll the Pool² scripts
 
-For setup the Pool² itself, you can use the [pool2-deployment-scripts]() that can be easy downloades over [github](). Please noticethat the scripts creates a folder in the upper directory if you dont use the docker-group and start the script with `sudo` this folder can only access by root. On staging, we create a folder Pool and copy the reposetory directly in this folder. On linux you can do this with:
+For setup the Pool² itself, you can use the [pool2-deployment-scripts](https://github.com/Viva-con-Agua/pool2-deployment-scripts) that can be easy downloades over [github](). In the case of develop, you need the develop branch. Please notice that the scripts creates a folder in the upper directory if you dont use the docker-group and start the script with `sudo` this folder can only access by root. On staging, we create a folder Pool and copy the reposetory directly in this folder. On linux you can do this with:
 ```
 	mkdir ~/Pool
 	cd ~/Pool
