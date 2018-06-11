@@ -61,7 +61,7 @@ in range of this network. You can find all IPs with `docker network inspect pool
 
 ## Read the Logs
 
-In some cases you need to read the logs. For this purpose, you can use the given scripts: `./pool.sh logs microservice_name`. So, if everything works, you have to register your first user on _Drops_. Activation of your account requires to use a link that has send you by email. On a development system a mockup email server is used, writing the email to the logs of _Drops_. Thus you can call the link from the logs by `./pool.sh logs drops`.
+In some cases, you need to read the logs. For this purpose, you can use the given scripts: `./pool.sh logs microservice_name`. So, if everything works, you have to register your first user on _Drops_. Activation of your account requires to use a link that has sent you by email. On a development system, a mockup email server is used, writing the email to the logs of _Drops_. Thus you can call the link from the logs by `./pool.sh logs drops`.
 
 ## Setup your own Microservice
 
